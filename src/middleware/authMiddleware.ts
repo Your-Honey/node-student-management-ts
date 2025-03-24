@@ -1,11 +1,9 @@
 import jwt from 'jsonwebtoken';
 import asyncHandler from 'express-async-handler';
 import User from '../models/userModel';
-import { Request, Response, NextFunction } from 'express';
+import { Response, NextFunction } from 'express';
+import { IGetUserAuthInfoRequest } from '../types/request';
 
-interface IGetUserAuthInfoRequest extends Request {
-  user?: any; // Use the appropriate type for the user property
-}
 
 const isAuth = asyncHandler(async (req: IGetUserAuthInfoRequest, res: Response, next: NextFunction) => {
   let token = req.headers.authorization;

@@ -2,7 +2,7 @@
   "name": "typescript-node-setup",
   "version": "1.0.0",
   "description": "Node.js project with TypeScript, Express.js, ESLint, Prettier, ts-node, nodemon and package.json environment specific scripts.",
-  "main": "index.js",
+  "main": "server.ts",
   "scripts": {
     "local": "cross-env NODE_ENV=local nodemon",
     "dev": "cross-env NODE_ENV=development npm run build:start",
@@ -48,6 +48,9 @@
     "@types/jsonwebtoken": "^9.0.8",
     "@types/mongoose": "^5.11.96",
     "@types/node": "^20.10.4",
+    "@types/nodemailer": "^6.4.17",
+    "@types/swagger-jsdoc": "^6.0.4",
+    "@types/swagger-ui-express": "^4.1.8",
     "cross-env": "^7.0.3",
     "nodemon": "^3.0.2",
     "rimraf": "^6.0.1",
@@ -66,7 +69,10 @@
     "helmet": "^7.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.10.1",
-    "prettier": "^3.1.1"
+    "nodemailer": "^6.10.0",
+    "prettier": "^3.1.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "engines": {
     "npm": ">=9.5.1",

@@ -1,18 +1,8 @@
-import express from "express";
-import {
-  authUser,
-  forgotPassword,
-  resetPassword
-} from "../controllers/userController";
-
-
-const router = express.Router();
-
 /**
  * @swagger
  * components:
  *   securitySchemes:
- *     BearerAuth:
+ *     bearerAuth:
  *       type: http
  *       scheme: bearer
  *       bearerFormat: JWT
@@ -56,11 +46,9 @@ const router = express.Router();
  *           example: "NewPassword123"
  */
 
-
-
 /**
  * @swagger
- * /api/user/login:
+ * /api/auth/login:
  *   post:
  *     summary: Authenticate user & return token
  *     tags: [Authentication]
@@ -83,11 +71,10 @@ const router = express.Router();
  *       400:
  *         description: Invalid credentials
  */
-router.post("/login", authUser);
 
 /**
  * @swagger
- * /api/user/forgot-password:
+ * /api/auth/forgot-password:
  *   post:
  *     summary: Request password reset link via email
  *     tags: [Authentication]
@@ -107,11 +94,10 @@ router.post("/login", authUser);
  *       404:
  *         description: User not found
  */
-router.post("/forgot-password", forgotPassword);
 
 /**
  * @swagger
- * /api/user/reset-password:
+ * /api/auth/reset-password:
  *   post:
  *     summary: Reset password using token
  *     tags: [Authentication]
@@ -131,7 +117,4 @@ router.post("/forgot-password", forgotPassword);
  *       400:
  *         description: Invalid or expired token
  */
-router.post("/reset-password", resetPassword);
 
-
-export default router;
